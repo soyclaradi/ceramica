@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerámica Artesanal - [Tu Nombre]</title>
+    <style>
+        /* Estilos básicos para un diseño atractivo */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f1e8; color: #333; }
+        header { background-color: #8b4513; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #d2b48c; padding: 10px; text-align: center; }
+        nav a { color: #333; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #8b4513; }
+        .section { padding: 40px; max-width: 1200px; margin: auto; }
+        .hero { background-image: url('images/hero.jpg'); background-size: cover; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .item { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        .item img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+        .custom { border: 3px solid #8b4513; } /* Mayor jerarquía para personalizadas */
+        .contact form { display: flex; flex-direction: column; max-width: 400px; margin: auto; }
+        .contact input, .contact textarea { margin: 10px 0; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .contact button { background-color: #8b4513; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; }
+        .contact button:hover { background-color: #654321; }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px; }
+        #lang-toggle { position: absolute; top: 20px; right: 20px; background: #d2b48c; border: none; padding: 10px; cursor: pointer; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <button id="lang-toggle">Cambiar a Inglés</button>
+    <header>
+        <h1 id="title">Cerámica Artesanal de [Tu Nombre]</h1>
+        <p id="subtitle">Piezas únicas hechas con pasión</p>
+    </header>
+    <nav>
+        <a href="#home" id="nav-home">Inicio</a>
+        <a href="#custom" id="nav-custom">Piezas Personalizadas</a>
+        <a href="#invented" id="nav-invented">Piezas Inventadas</a>
+        <a href="#about" id="nav-about">Sobre Mí</a>
+        <a href="#contact" id="nav-contact">Contacto</a>
+    </nav>
+    
+    <section id="home" class="section hero">
+        <div>
+            <h2 id="hero-title">Bienvenido a mi mundo de cerámica</h2>
+            <p id="hero-text">Descubre piezas personalizadas y creaciones originales, perfectas para ferias y colecciones.</p>
+        </div>
+    </section>
+    
+    <section id="custom" class="section">
+        <h2 id="custom-title">Piezas Personalizadas</h2>
+        <p id="custom-desc">Creadas a medida para ti. Mayor jerarquía en mi colección.</p>
+        <div class="grid">
+            <div class="item custom">
+                <img src="images/pieza-personalizada1.jpg" alt="Pieza personalizada 1">
+                <h3>Pieza Personalizada 1</h3>
+                <p>Descripción breve. Precio: $XX</p>
+            </div>
+            <div class="item custom">
+                <img src="images/pieza-personalizada2.jpg" alt="Pieza personalizada 2">
+                <h3>Pieza Personalizada 2</h3>
+                <p>Descripción breve. Precio: $XX</p>
+            </div>
+            <!-- Agrega más items aquí -->
+        </div>
+    </section>
+    
+    <section id="invented" class="section">
+        <h2 id="invented-title">Piezas Inventadas</h2>
+        <p id="invented-desc">Mis creaciones originales, inspiradas en la naturaleza y la innovación.</p>
+        <div class="grid">
+            <div class="item">
+                <img src="images/pieza-inventada1.jpg" alt="Pieza inventada 1">
+                <h3>Pieza Inventada 1</h3>
+                <p>Descripción breve. Precio: $XX</p>
+            </div>
+            <div class="item">
+                <img src="images/pieza-inventada2.jpg" alt="Pieza inventada 2">
+                <h3>Pieza Inventada 2</h3>
+                <p>Descripción breve. Precio: $XX</p>
+            </div>
+            <!-- Agrega más items aquí -->
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <h2 id="about-title">Sobre Mí</h2>
+        <p id="about-text">Soy [Tu Nombre], ceramista apasionado con años de experiencia. Mi trabajo combina tradición y creatividad para crear piezas únicas.</p>
+    </section>
+    
+    <section id="contact" class="section contact">
+        <h2 id="contact-title">Contacto</h2>
+        <form action="#" method="post">
+            <input type="text" id="name" placeholder="Nombre" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Mensaje" required></textarea>
+            <button type="submit" id="submit-btn">Enviar</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p id="footer-text">&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+        // JavaScript para alternar idiomas
+        const langToggle = document.getElementById('lang-toggle');
+        let isEnglish = false;
+        
+        const translations = {
+            es: {
+                title: "Cerámica Artesanal de [Tu Nombre]",
+                subtitle: "Piezas únicas hechas con pasión",
+                navHome: "Inicio",
+                navCustom: "Piezas Personalizadas",
+                navInvented: "Piezas Inventadas",
+                navAbout: "Sobre Mí",
+                navContact: "Contacto",
+                heroTitle: "Bienvenido a mi mundo de cerámica",
+                heroText: "Descubre piezas personalizadas y creaciones originales, perfectas para ferias y colecciones.",
+                customTitle: "Piezas Personalizadas",
+                customDesc: "Creadas a medida para ti. Mayor jerarquía en mi colección.",
+                inventedTitle: "Piezas Inventadas",
+                inventedDesc: "Mis creaciones originales, inspiradas en la naturaleza y la innovación.",
+                aboutTitle: "Sobre Mí",
+                aboutText: "Soy [Tu Nombre], ceramista apasionado con años de experiencia. Mi trabajo combina tradición y creatividad para crear piezas únicas.",
+                contactTitle: "Contacto",
+                submitBtn: "Enviar",
+                footerText: "&copy; 2023 [Tu Nombre]. Todos los derechos reservados.",
+                toggle: "Cambiar a Inglés"
+            },
+            en: {
+                title: "Artisan Pottery by [Your Name]",
+                subtitle: "Unique pieces made with passion",
+                navHome: "Home",
+                navCustom: "Custom Pieces",
+                navInvented: "Invented Pieces",
+                navAbout: "About Me",
+                navContact: "Contact",
+                heroTitle: "Welcome to my pottery world",
+                heroText: "Discover custom pieces and original creations, perfect for fairs and collections.",
+                customTitle: "Custom Pieces",
+                customDesc: "Made to measure for you. Higher hierarchy in my collection.",
+                inventedTitle: "Invented Pieces",
+                inventedDesc: "My original creations, inspired by nature and innovation.",
+                aboutTitle: "About Me",
+                aboutText: "I am [Your Name], a passionate potter with years of experience. My work combines tradition and creativity to create unique pieces.",
+                contactTitle: "Contact",
+                submitBtn: "Send",
+                footerText: "&copy; 2023 [Your Name]. All rights reserved.",
+                toggle: "Switch to Spanish"
+            }
+        };
+        
+        function updateLanguage() {
+            const lang = isEnglish ? 'en' : 'es';
+            document.getElementById('title').textContent = translations[lang].title;
+            document.getElementById('subtitle').textContent = translations[lang].subtitle;
+            document.getElementById('nav-home').textContent = translations[lang].navHome;
+            document.getElementById('nav-custom').textContent = translations[lang].navCustom;
+            document.getElementById('nav-invented').textContent = translations[lang].navInvented;
+            document.getElementById('nav-about').textContent = translations[lang].navAbout;
+            document.getElementById('nav-contact').textContent = translations[lang].navContact;
+            document.getElementById('hero-title').textContent = translations[lang].heroTitle;
+            document.getElementById('hero-text').textContent = translations[lang].heroText;
+            document.getElementById('custom-title').textContent = translations[lang].customTitle;
+            document.getElementById('custom-desc').textContent = translations[lang].customDesc;
+            document.getElementById('invented-title').textContent = translations[lang].inventedTitle;
+            document.getElementById('invented-desc').textContent = translations[lang].inventedDesc;
+            document.getElementById('about-title').textContent = translations[lang].aboutTitle;
+            document.getElementById('about-text').textContent = translations[lang].aboutText;
+            document.getElementById('contact-title').textContent = translations[lang].contactTitle;
+            document.getElementById('submit-btn').textContent = translations[lang].submitBtn;
+            document.getElementById('footer-text').innerHTML = translations[lang].footerText;
+            langToggle.textContent = translations[lang].toggle;
+        }
+        
+        langToggle.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            updateLanguage();
+        });
+    </script>
+</body>
+</html>
